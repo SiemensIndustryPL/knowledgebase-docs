@@ -19,7 +19,7 @@ title: Siemens Knowledgebase
       Siemens Knowledgebase to baza wiedzy, zawierająca odpowiedzi, wyjaśnienia oraz przykłady dotyczące produktów Siemens.
    </p>
 
-   <a href="/wincc-unified/uiux" style="
+   <a href="wincc-unified/uiux" style="
       display:inline-block;
       margin-top:30px;
       background:#00c1b6;
