@@ -1,6 +1,12 @@
 - name: WinCC Unified
   href: ./wincc-unified/
-- name: TIA Portal
-  href: ./tia-portal/
+- name: SIMATIC STEP7
+  href: ./simatic-step7/
 - name: WinCC 7.x/8.x
   href: ./wincc-7x-8x/
+- name: Motion
+  href: ./motion/
+- name: Sieci
+  href: ./networks/
+- name: Industrial Edge
+  href: ./industrial-edge/
