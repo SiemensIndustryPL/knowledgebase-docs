@@ -14,10 +14,10 @@
 
 a.external {
   text-decoration: none;
-}
 
-a.external:hover {
-  text-decoration: underline;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 
 /* Navbar */
@@ -34,13 +34,15 @@ a.external:hover {
 
 .navbar .nav-link {
   position: relative;
+  align-content: center;
+  height: 60px;
 }
 
 .navbar .nav-link.active::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -10px;
+  bottom: 0;
   height: 2px;
   background: var(--theme-color-dynamic);
   width: 100%;
