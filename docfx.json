@@ -33,9 +33,9 @@
     ],
     "globalMetadata": {
       "_appName": "",
-      "_appTitle": "docfx-demo",
+      "_appTitle": "Siemens knowledgebase",
       "_enableSearch": true,
-      "pdf": true,
+      "pdf": false,
       "_appLogoPath": "images/sie-logo-white-rgb.svg",
       "_appFaviconPath": "images/favicon.ico"
     }

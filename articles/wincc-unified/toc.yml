@@ -1,9 +1,10 @@
 - name: Example Chapter 1 Name
 - href: uiux.md
+- href: es.md
 - href: markdown.md
 
 - name: Example Chapter 2 Name
-- href: es.md
+
 - href: uzytkownicy.md
 
 - name: Example Chapter 3 Name
