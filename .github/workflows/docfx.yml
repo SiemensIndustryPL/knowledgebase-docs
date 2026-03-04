@@ -3,7 +3,7 @@ name: Build and Publish DocFX
 on:
   push:
     branches:
-      - krystian
+      - main
 
 permissions:
   actions: read
