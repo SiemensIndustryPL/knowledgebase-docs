@@ -1,6 +1,7 @@
 # Obiekty
 ## Obiekty – wyświetlanie zmiennej typu Int z przecinkiem
 
+
 `io` `ioflied` `int` `float` `display`
 
 https://support.industry.siemens.com/cs/ww/en/view/109816808
