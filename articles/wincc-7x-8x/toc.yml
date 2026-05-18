@@ -1,2 +1,8 @@
-- name: Konfiguracja stacji wielomonitorowej
+- name: WinCC konfiguracja stacji wielomonitorowej
   href: stacja_wielomonitorowa.md
+- name: WinCC v7 - Wysyłanie wiadomości e-mail z poziomu skryptu VB
+  href: wysylanie_email.md
+- name: WinCC V7 Binarna prezentacja graficzna zmiennych archiwalnych
+  href: binarna_prezentacja
+- name: WinCC Professional - Raporty dynamiczne
+  href: raporty_dynamiczne.md
