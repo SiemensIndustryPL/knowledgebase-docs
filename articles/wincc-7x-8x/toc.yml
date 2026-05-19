@@ -6,3 +6,23 @@
   href: binarna_prezentacja
 - name: WinCC Professional - Raporty dynamiczne
   href: raporty_dynamiczne.md
+- name: WinCC Professional - Odczyt informacji z systemowej bazy danych SQL
+  href: odczyt_SQL.md
+- name: WinCC Professional - Krokowy odczyt informacji z systemowej bazy danych SQL
+  href: krokowy_sql.md
+- name: WinCC Professional - Wykorzystanie mechanizmu receptur w celu raportowania cyklu procesowego
+  href: raport_cyklu.md
+- name: WinCC Professional - Zmiana parametru obiektu graficznego przez skrypt
+  href: zmiana_parametru.md
+- name: WinCC_Professional_ audytowanie akcji operatora przez system komunikatów alarmowych
+  href: audyt_akcji.md
+- name: WinCC_Professional_skryptowe audytowanie akcji operatora
+  href: skryptowy_audyt.md
+- name: WinCC_Professional_Uniwersalne_stacyjki
+  href: uniwersalne_stacyjki.md
+- name: WinCC_v7_Diagnostyka_skpryptów
+  href: diagnostyka_skryptow.md
+- name: WinCC_v7_Wymiana_danych_RawDataType
+  href: wymiana_danych_raw.md
+- name: WinCC_Wyświetlanie danych użytkownika na systemowej kontrolce trendu
+  href: wyswietlanie_danych.md
