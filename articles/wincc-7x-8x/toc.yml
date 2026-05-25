@@ -1,4 +1,27 @@
-- name: Introduction
-  href: introduction.md
-- name: Getting Started
-  href: getting-started.md
+- name: WinCC konfiguracja stacji wielomonitorowej
+  href: stacja_wielomonitorowa.md
+- name: WinCC_v7 - Diagnostyka skpryptów
+  href: diagnostyka_skryptow.md
+- name: WinCC_v7 - Wymiana danych RawDataType
+  href: wymiana_danych_raw.md
+- name: WinCC v7 - Wysyłanie wiadomości e-mail z poziomu skryptu VB
+  href: wysylanie_email.md
+- name: WinCC V7 Binarna prezentacja graficzna zmiennych archiwalnych
+  href: binarna_prezentacja
+- name: WinCC Professional - Raporty dynamiczne
+  href: raporty_dynamiczne.md
+- name: WinCC Professional - Odczyt informacji z systemowej bazy danych SQL
+  href: odczyt_SQL.md
+- name: WinCC Professional - Krokowy odczyt informacji z systemowej bazy danych SQL
+  href: krokowy_sql.md
+- name: WinCC Professional - Wykorzystanie mechanizmu receptur w celu raportowania cyklu procesowego
+  href: raport_cyklu.md
+- name: WinCC Professional - Zmiana parametru obiektu graficznego przez skrypt
+  href: zmiana_parametru.md
+- name: WinCC_Professional - audytowanie akcji operatora przez system komunikatów alarmowych
+  href: audyt_akcji.md
+- name: WinCC_Professional - skryptowe audytowanie akcji operatora
+  href: skryptowy_audyt.md
+- name: WinCC_Professional - Uniwersalne_stacyjki
+  href: uniwersalne_stacyjki.md
+
