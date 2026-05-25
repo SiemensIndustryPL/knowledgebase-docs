@@ -1,0 +1,1 @@
+Zastosowanie zmiennych Raw Data Type – WinCC v7.0
