@@ -1,5 +1,9 @@
 - name: WinCC konfiguracja stacji wielomonitorowej
   href: stacja_wielomonitorowa.md
+- name: WinCC_v7 - Diagnostyka skpryptów
+  href: diagnostyka_skryptow.md
+- name: WinCC_v7 - Wymiana danych RawDataType
+  href: wymiana_danych_raw.md
 - name: WinCC v7 - Wysyłanie wiadomości e-mail z poziomu skryptu VB
   href: wysylanie_email.md
 - name: WinCC V7 Binarna prezentacja graficzna zmiennych archiwalnych
@@ -14,15 +18,10 @@
   href: raport_cyklu.md
 - name: WinCC Professional - Zmiana parametru obiektu graficznego przez skrypt
   href: zmiana_parametru.md
-- name: WinCC_Professional_ audytowanie akcji operatora przez system komunikatów alarmowych
+- name: WinCC_Professional - audytowanie akcji operatora przez system komunikatów alarmowych
   href: audyt_akcji.md
-- name: WinCC_Professional_skryptowe audytowanie akcji operatora
+- name: WinCC_Professional - skryptowe audytowanie akcji operatora
   href: skryptowy_audyt.md
-- name: WinCC_Professional_Uniwersalne_stacyjki
+- name: WinCC_Professional - Uniwersalne_stacyjki
   href: uniwersalne_stacyjki.md
-- name: WinCC_v7_Diagnostyka_skpryptów
-  href: diagnostyka_skryptow.md
-- name: WinCC_v7_Wymiana_danych_RawDataType
-  href: wymiana_danych_raw.md
-- name: WinCC_Wyświetlanie danych użytkownika na systemowej kontrolce trendu
-  href: wyswietlanie_danych.md
+
