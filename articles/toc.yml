@@ -5,7 +5,13 @@
 #- name: SIMATIC STEP7
 #  href: ./simatic-step7/
 
-#- name: Motion
+
+- name: Motion Control
+  href: ./motion/
+
+
+
+#- name: Motion Control
 #  href: ./motion/
 #- name: Sieci
 #  href: ./networks/
