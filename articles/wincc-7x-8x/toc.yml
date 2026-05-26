@@ -7,7 +7,7 @@
 - name: WinCC v7 - Wysyłanie wiadomości e-mail z poziomu skryptu VB
   href: wysylanie_email.md
 - name: WinCC V7 Binarna prezentacja graficzna zmiennych archiwalnych
-  href: binarna_prezentacja
+  href: binarna_prezentacja.md
 - name: WinCC Professional - Raporty dynamiczne
   href: raporty_dynamiczne.md
 - name: WinCC Professional - Odczyt informacji z systemowej bazy danych SQL
