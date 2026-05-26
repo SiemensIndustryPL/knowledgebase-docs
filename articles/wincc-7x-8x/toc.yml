@@ -1,8 +1,8 @@
 - name: WinCC konfiguracja stacji wielomonitorowej
   href: stacja_wielomonitorowa.md
-- name: WinCC_v7 - Diagnostyka skpryptów
+- name: WinCC V7 - Diagnostyka skpryptów
   href: diagnostyka_skryptow.md
-- name: WinCC_v7 - Wymiana danych RawDataType
+- name: WinCC V7 - Wymiana danych RawDataType
   href: wymiana_danych_raw.md
 - name: WinCC v7 - Wysyłanie wiadomości e-mail z poziomu skryptu VB
   href: wysylanie_email.md
