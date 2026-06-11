@@ -1,6 +1,6 @@
 - name: Simatic S7-1200 + Sinamics V90 PTI
   href: S71200_V90PTI.md
-- name: SIMATIC S7-1500 + SINAMICS V90 PN
+- name: Simatic S7-1500 + Sinamics V90 PN
   href: S71200_V90PN.md
 
 
