@@ -24,6 +24,17 @@ title: Siemens Knowledgebase
       Niezależnie od tego, czy konfigurujesz nowe urządzenie, rozwiązujesz problem, czy szukasz najlepszych praktyk – znajdziesz tutaj materiały przygotowane przez naszych specjalistów.
    </p>
 
+   <p style="font-size:1.2rem; line-height:1.6; padding-top:1rem;">
+<strong>Dla kogo jest ta baza wiedzy?</strong>
+</p>
+<p style="font-size:1.2rem; line-height:1.6; ">
+Serwis został przygotowany z myślą o inżynierach automatyki, programistach PLC i HMI, specjalistach utrzymania ruchu, osobach rozpoczynających pracę z rozwiązaniami Siemens
+</p>
+
+<p style="font-size:1.2rem; line-height:1.6; padding-top:1rem;">
+Niezależnie od poziomu doświadczenia, baza wiedzy umożliwia szybkie znalezienie praktycznych informacji potrzebnych podczas projektowania, uruchamiania i serwisowania instalacji.
+</p>
+
 <p style="font-size:1.2rem; line-height:1.6; padding-top:1rem;">
       <strong>W bazie dostępne są:</strong>
       </p>
@@ -44,6 +55,7 @@ title: Siemens Knowledgebase
 Regularnie rozwijamy bazę wiedzy, aby dostarczać aktualne informacje i ułatwiać codzienną pracę projektantom, integratorom oraz służbom utrzymania ruchu.
 </p>
 
+<!--
 <p style="font-size:1.2rem; line-height:1.6; padding-top:1rem;">
 <strong>Dlaczego warto korzystać z bazy wiedzy?</strong>
 </p>
@@ -60,31 +72,9 @@ Regularnie rozwijamy bazę wiedzy, aby dostarczać aktualne informacje i ułatwi
 <p style="font-size:1.2rem; line-height:1.6;padding-left:1rem; ">
 💡 Wskazówki przygotowane przez specjalistów
 </p>
+-->
 
 
-<p style="font-size:1.2rem; line-height:1.6; padding-top:1rem;">
-<strong>Dla kogo jest ta baza wiedzy?</strong>
-</p>
-<p style="font-size:1.2rem; line-height:1.6; ">
-Serwis został przygotowany z myślą o:
-</p>
-
-<p style="font-size:1.2rem; line-height:1.6;padding-left:1rem; ">
-Inżynierach automatyki
-</p>
-<p style="font-size:1.2rem; line-height:1.6;padding-left:1rem; ">
-Programistach PLC i HMI
-</p>
-<p style="font-size:1.2rem; line-height:1.6;padding-left:1rem; ">
-Specjalistach utrzymania ruchu
-</p>
-<p style="font-size:1.2rem; line-height:1.6;padding-left:1rem; ">
-Osobach rozpoczynających pracę z rozwiązaniami Siemens
-</p>
-
-<p style="font-size:1.2rem; line-height:1.6; padding-top:1rem;">
-Niezależnie od poziomu doświadczenia, baza wiedzy umożliwia szybkie znalezienie praktycznych informacji potrzebnych podczas projektowania, uruchamiania i serwisowania instalacji.
-</p>
 
 
    </div>
