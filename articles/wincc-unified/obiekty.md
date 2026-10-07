@@ -1,12 +1,11 @@
 # Obiekty
 ## Obiekty – wyświetlanie zmiennej typu Int z przecinkiem
 
-
 `io` `ioflied` `int` `float` `display`
 
-https://support.industry.siemens.com/cs/ww/en/view/109816808
+Dość częstym wymaganiem jest, aby zmienne całkowitoliczbowe (np. Int), na których operuje sterownik, były wyświetlane / interpretowane po stronie HMI jako liczby zmiennoprzecinkowe. Przykładowo, operator wpisuje na HMI wartość „13,05”, a w programie PLC ma być ona traktowana jako „1305”, bez bloków pośredniczących służących do przeliczania.
 
-Shift decimal places V20.0.0.3
+Do wersji 20 Update 1 podstawową metodą realizacji takiej funkcjonalności było dodanie do każdego obiektu IOField dwóch skryptów modyfikujących wartość wymienianą z PLC. Począwszy od V20 Update 3, dla pól można skonfigurować to zachowanie poprzez właściwość „Shift decimal places”. Szczegóły we wpisie na [stronie internetowej wsparcia technicznego](https://support.industry.siemens.com/cs/ww/en/view/109816808).
 
 ## Obiekty – dostęp do list tekstowych ze skryptu
 

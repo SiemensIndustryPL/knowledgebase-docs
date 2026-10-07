@@ -38,10 +38,9 @@ Sekcja 3 służy definicji nagłówka pliku tekstowego oraz separatora danych. W
 Blok 4 ma na celu realizację odczytu informacji na temat zmiennych z bazy danych i przepisanie ich do łańcucha znaków. W szablonie zaimplementowano mechanizm pobierania wartości i stempla czasowego tylko jednej zmiennej, o nazwie podanej w pierwszej linijce sekcji. Nazwę należy podać w formacie „&lt;nazwa_taga&gt;:&lt;nazwa_logging_taga&gt;” – najlepiej odczytać w edytorze HMI Tags. Struktura zmiennej przetwarzanej w pętli for powinna odpowiadać tej zadeklarowanej dla nagłówka w sekcji 3. Jeżeli raport powinien obejmować kilka zmiennych, konieczna będzie [przebudowa tego fragmentu kodu](https://youtu.be/wFXAXEadgzM?si=8HBMb1ZvIfwH2p7o).
 
 W ostatnim, piątym akapicie skryptu wykonywana jest obsługa pliku tekstowego.
-
 Dobierając zakres czasowy eksportu i liczbę zmiennych objętych raportem, należy mieć na uwadze fakt, że tworzenie pliku .csv wykonywane jest linijka po linijce. W związku z tym, przy archiwizacji z dużą częstotliwością, czas wykonywania skryptu może znacząco wzrastać, ostatecznie blokując wykonywanie innych akcji, a nawet prowadzić do tymczasowego zamrożenia wizualizacji.
 
-Eksport bazy danych do pliku w formacie .csv możliwy jest również dla archiwum alarmów. Szablon kodu można znaleźć pod ścieżką „Snippets > HMI Runtime > Tag Logging > Export tag log as CSV”:
+Eksport bazy danych do pliku w formacie .csv możliwy jest również dla archiwum alarmów. W TIA Portal >= V21 służy do tego funkcja systemowa `„ExportAlarmLog()”`. Jeżeli dysponuje się starszą wersją, szablon kodu można znaleźć pod ścieżką `„Snippets > HMI Runtime > Alarm Logging > Export alarm log as CSV”`:
 
 ![ <alt-text> ]( images/archiwizacja/archiwizacja3.png )
 
@@ -65,13 +64,13 @@ Jeżeli mamy do dyspozycji panel operatorski, dane są logowane zawsze w formaci
 
 Dla wizualizacji komputerowych, zależnie od zainstalowanego oprogramowania, można wybrać typ SQLite lub MS SQL. Dla każdego z trzech obszarów archiwum można wskazać następujące lokalizacje docelowe:
 
-- „Default” – folder wskazany w Unified Configuration,
+- „Default” – folder wpisany w Unified Configuration,
 - „Local” – dowolna ścieżka podana ręcznie,
-- „Project folder” – folder skompilowanego projektu wizualizacji, zwykle lokalizacja „C:\\ProgramData\\SCADAProjects”
+- „Project folder” – folder skompilowanego projektu wizualizacji, zwykle lokalizacja „C:\ProgramData\SCADAProjects”.
 
 ![ <alt-text> ]( images/archiwizacja/archiwizacja6.png )
 
-Dalsza konfiguracja baz danych zachodzi z poziomu edytora „Logs”. Tutaj należy utworzyć logi, które pozwalają na logiczną organizację bazy danych – pojedynczy log może zawierać np. zmienne o tym samym cyklu akwizycji bądź powiązane z konkretnym obiektem procesu.
+Dalsza konfiguracja baz danych zachodzi z poziomu edytora „Logs”. Tutaj należy utworzyć logi, które pozwalają na organizację bazy danych – pojedynczy log może zawierać np. zmienne o tym samym cyklu akwizycji bądź powiązane z konkretnym obiektem procesu.
 
 ![ <alt-text> ]( images/archiwizacja/archiwizacja7.png )
 
@@ -80,8 +79,11 @@ Każdy log składa się z konfigurowalnej liczby segmentów. Segmenty są wypeł
 Na zakres czasowy archiwizacji, a zatem i częstotliwość usuwania segmentów, możemy wpływać na wiele sposobów, przykładowo:
 
 - Zwiększyć liczbę segmentów logu, zwiększyć rozpiętość czasową pojedynczego segmentu i zwiększyć rozpiętość czasową całej bazy danych;
+
 - Zwiększyć rozmiar segmentów/logu, jeżeli będzie archiwizowana duża liczba zmiennych;
-- Ustawić „0” w kolumnach „Segment time period" i „Log time period", aby brane pod uwagę były tylko ograniczenia związane z rozmiarem segmentu/logu;
+
+- Ustawić „0” w kolumnach „Segment time period"  i „Log time period", aby brane pod uwagę były tylko ograniczenia związane z rozmiarem segmentu/logu;
+
 - Ustawić „0” w kolumnach „Maximum log size (MB)” i „Maximum log size (MB)”, aby brane pod uwagę były tylko ograniczenia związane z czasem trwania segmentu/logu.
 
 Więcej informacji na temat systemu archiwizacji można znaleźć w [dokumentacji WinCC Unified](https://docs.tia.siemens.cloud/r/en-us/v20/logging-data-rt-unified/how-it-works-rt-unified).

@@ -20,10 +20,38 @@ Szerszy opis problemu oraz dalsze zalecenia można znaleźć we [wpisie](https:/
 
 `runtime` `monitor` `browser`
 
-System wizualizacji WinCC Unified PC RT nie przewiduje systemowych mechanizmów służących konfiguracji aplikacji wielomonitorowych. Znane są następujące podejścia, pozwalające na warunkowe wdrożenie takiej funkcjonalności:
+
+
+WinCC Unified PC RT od wersji 21 przewiduje systemowy mechanizm służący do konfiguracji aplikacji wielomonitorowych – zarówno dla stacji lokalnej jak i klientów webowych opartych na PC. Ustawienia wprowadza się wyłącznie w witrynie MyWinCCUnified.
+
+Projekt wizualizacji w TIA Portal powinien zawierać ekrany przeznaczone dla każdego monitora i mieć odpowiednio przemyślaną nawigację. Należy utworzyć konto użytkownika z uprawnieniami do obsługi MyWinCCUnified – najprościej z systemową rolą HMI Administrator.
+
+![ <alt-text> ]( images/runtimepc/Runtime_PC_wizualizacja_wielomonitorowa_84.png )
+
+Na komputerze docelowym oprócz WinCC Unified PC Runtime powinno być zainstalowane rozszerzenie [WinCC Unified Station Configurator](https://support.industry.siemens.com/cs/pl/en/view/109827849) w tej samej wersji. Należy uruchomić Runtime i z paska Start systemu Windows przejść do Station Configurator. W oknie dialogowym wpisuje się nazwę lub adresem IP lokalnego komputera – zgodnie z tym jak ustawiony jest dostęp do wizualizacji (WinCC Unified Configuration) i jak wystawione są certyfikaty (Subject Alternative Name).
+
+![ <alt-text> ]( images/runtimepc/Runtime_PC_wizualizacja_wielomonitorowa_85.png )
+
+Jeśli test połączenia przebiegnie pozytywnie, następnym krokiem jest uruchomienie MyWinCCUnified i zalogowanie się poświadczeniami wspomnianego wcześniej użytkownika. Zarządzanie stacjami operatorskimi dostępne jest w po przejściu do sekcji „Client overview”.
+
+![ <alt-text> ]( images/runtimepc/Runtime_PC_wizualizacja_wielomonitorowa_86.png )
+
+W zakładce „Client settings” należy wpisać podstawowe atrybuty, czyli nazwę organizacyjną i adres IP komputera. Możliwa jest aktywacja opcji wyświetlenia ekranu startowego bez zalogowania. Zakładka „Monitor setup” służy do odczytu lokalnej konfiguracji monitorów. Dopuszczalny jest tylko podgląd – jeśli potrzebne są modyfikacje, wprowadza się je w Panelu Sterowania systemu Windows. Przyporządkowanie ekranów do konkretnych monitorów realizowane jest w zakładce „Screen assignment”.
+
+![ <alt-text> ]( images/runtimepc/Runtime_PC_wizualizacja_wielomonitorowa_87.png )
+
+Dodatkowe wypełnienie zakładki „Kiosk” pozwoli ograniczyć dostęp do systemu operacyjnego i wyświetlać wizualizację w trybie pełnoekranowym.
+
+Aplikację wielomonitorową można uruchomić jak standardową, wpisując adres witryny w przeglądarce internetowej lub korzystając ze skrótu „Launch UI Client” na pulpicie bądź w Station Configurator.
+
+![ <alt-text> ]( images/runtimepc/Runtime_PC_wizualizacja_wielomonitorowa_88.png )
+
+Dla wizualizacji w wersjach <= V20 znane są następujące podejścia pozwalające na warunkowe wdrożenie wielomonitorowej stacji operatorskiej:
 
 - Stworzenie ekranów o podwójnej szerokości. Problemem jest konieczność rozciągnięcia przeglądarki internetowej na dwa monitory. Nie jest możliwe przejście do trybu pełnoekranowego ani zastosowanie trybu kiosk. Niektóre okna dialogowe wyświetlane są na środku, co może utrudniać ich obsługę.
+
 - Wyświetlenie dwóch niezależnych ekranów w osobnych instancjach przeglądarki, gdzie każda z nich przyporządkowana jest do jednego monitora. Możliwość przejścia do trybu pełnoekranowego. Problemy: oba okna są niezależne; konieczność zalogowania się dwa razy; zużywana jest dodatkowa licencja klienta webowego.
+
 - Skorzystanie z funkcjonalności karty graficznej – połączenie dwóch monitorów w ten sposób, że PC traktuje je jako jeden obszar. Tryb pełnoekranowy przeglądarki obejmuje oba monitory. W przypadku kart graficznych Intel (na wyposażeniu większości SIMATIC IPC) funkcja nosi nazwę [„Collage mode”](https://www.intel.com/content/dam/support/us/en/documents/graphics/sb/Intel_Collage_Display_Feature_Rev1.pdf), a dla NVIDIA – „[Set Up Merged Display](https://www.nvidia.com/content/Control-Panel-Help/vLatest/en-us/mergedProjects/Display/To_merge_several_displays_into_one_display.htm)”.
 
 ## Runtime PC – „General error during processing”
@@ -63,6 +91,6 @@ Jeżeli problem pojawił się po pewnym czasie, tzn. wcześniej możliwe było b
 
 `simulation` `symulacja` `button` `greyed-out`
 
-Jeżeli w WinCC Unified V18-V20 przycisk symulacji urządzenia HMI jest nieaktywny (wyszarzony), to najprawdopodobniej nie zainstalowano komponentu WinCC Unified PC RT. Począwszy od wersji 18, symulator został wydzielony ze środowiska inżynierskiego. Do jego obsługi nie jest potrzebna żadna licencja. Przy instalacji należy zwrócić uwagę na jednolitość wersji i aktualizacji TIA Portal oraz WinCC Unified PC RT.
+Jeżeli w WinCC Unified >= V18 przycisk symulacji urządzenia HMI jest nieaktywny (wyszarzony), to najprawdopodobniej nie zainstalowano komponentu WinCC Unified PC RT. Począwszy od wersji 18, symulator został wydzielony ze środowiska inżynierskiego. Do jego obsługi nie jest potrzebna żadna licencja. Przy instalacji należy zwrócić uwagę na jednolitość wersji i aktualizacji TIA Portal oraz WinCC Unified PC RT.
 
 ![ <alt-text> ]( images/runtimepc/runtimepc2.png )

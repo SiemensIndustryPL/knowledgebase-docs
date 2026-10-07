@@ -25,11 +25,14 @@ Jeżeli istnieje potrzeba konfiguracji bufora o funkcjonalności takiej jak dla 
 W WinCC Unified nie przewidziano funkcjonalności „loop in alarm” znanej z WinCC V7/8. Nie mniej, możliwe jest wdrożenie podobnego mechanizmu w oparciu o skrypt. Sposób działania jest następujący:
 
 - Pojawia się alarm, który jest widoczny w kontrolce;
-- W Alarm Control należy wybrać wiersz tego alarmu (aby nawigować po wierszach musi być aktywny przycisk );
-- Akcja przypisana do alarmu (np. zmiana ekranu, zmiana wartości zmiennej) wykonywana jest po kliknięcie przycisku );
+- W Alarm Control należy wybrać wiersz tego alarmu (aby nawigować po wierszach musi być aktywny przycisk ![ <alt-text> ]( images/alarmy/Alarmy_loop_in_alarm_67.png ) );
+- Akcja przypisana do alarmu (np. zmiana ekranu, zmiana wartości zmiennej wykonywana jest po kliknięcie przycisku ![ <alt-text> ]( images/alarmy/Alarmy_loop_in_alarm_68.png ));
 - Informacja o skonfigurowanej akcji niesiona jest w „Info text” alarmu.
 
 Podczas otwierania [projektu przykładowego](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/35?csf=1&web=1&e=1uVztc) w docelowej wersji TIA Portal, pojawi się okno migracji. Po udanym podniesieniu wersji projektu, należy podmienić wersję WinCC Unified PC za pomocą funkcji „Change device / version”.
+Alternatywne podejście do wdrożenia tego mechanizmu omówiono w [poradniku migracyjnym](https://docs.tia.siemens.cloud/r/en-us/v1.0/wincc-unified/modernization-how-tos/hmi-alarms/loop-in-alarm).
+
+
 
 ## Alarmy – baner alarmowy
 

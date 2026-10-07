@@ -29,17 +29,21 @@ System memory card (slot X50-SYSTEM) przeznaczona jest do wykonywania automatycz
 
 `usb` `sd` `copy` `kopiowanie` `file` `plik`
 
-https://support.industry.siemens.com/cs/mdm/109810947?c=174019846155&lc=en-WW
-
 Domyślną lokalizacją zapisu pewnych plików generowanych przez użytkownika – np. w wyniku eksportu danych z kontrolek – jest obszar pamięci wewnętrznej panelu. Z poziomu menedżera plików, folder ten widoczny jest pod nazwą „industrial”.
 
 ![ <alt-text> ]( images/ucp/ucp1.png )
 
-Najczęściej konieczny jest transfer tych plików celem dalszej analizy. Takie przenoszenie realizowane jest za pośrednictwem zewnętrznych nośników pamięci (USB, SD) lub przy pomocy dysku sieciowego. Skopiowanie zawartości z pamięci wewnętrznej do innej lokalizacji umożliwia skrypt powłoki „copy.sh”.
+Najczęściej konieczny jest transfer tych plików celem dalszej analizy. Takie przenoszenie realizowane jest za pośrednictwem zewnętrznych nośników pamięci (USB, SD) lub przy pomocy dysku sieciowego. Skopiowanie zawartości z pamięci wewnętrznej do innej lokalizacji umożliwia skrypt powłoki [„copy.sh”](https://support.industry.siemens.com/cs/pl/en/view/109810947).
 
 ![ <alt-text> ]( images/ucp/ucp2.png )
 
-Skrypt uruchamia się używając funkcji systemowej „StartProgram()”. Poprzez parametr „Program name” należy podać jego ścieżkę, z kolei w „Program parameters” wpisuje się lokalizację pliku do skopiowania i folder docelowy. Przy wdrażaniu tej funkcjonalności we własnym projekcie, można posiłkować się [projektem demonstracyjnym](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/50?csf=1&web=1&e=Pm7Yvr).
+Skrypt uruchamia się używając funkcji systemowej `„StartProgram()”`. Poprzez parametr „Program name” należy podać jego ścieżkę, z kolei w „Program parameters” wpisuje się lokalizację pliku do skopiowania i folder docelowy. Przy wdrażaniu tej funkcjonalności we własnym projekcie, można posiłkować się [projektem demonstracyjnym](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/50?csf=1&web=1&e=Pm7Yvr).
+
+W celu poprawy wydajności panele Unified z systemem operacyjnym opartym na jądrze Linux domyślnie buforują wszystkie dane przeznaczone do zapisania na zewnętrznych nośnikach pamięci. Co 5 sekund proces działający w tle sprawdza, czy istnieją dane starsze niż 30 sekund i rozpoczyna ich zapisywanie na nośnikach pamięci. Nowsze zmiany są zapisywane tylko wtedy, gdy bufor zajmuje ponad 10% pamięci roboczej. Jeśli zapełnione jest ponad 20%, operacje zapisu są blokowane. W związku z tym po zakończeniu procesu zapisu przez system Unified potrzeba do 40 sekund, zanim dane będą dostępne na nośniku pamięci.
+
+Zamiast czekać 40 sekund, aby wymusić natychmiastowe zapisanie danych z pamięci podręcznej, można użyć polecenia [„sync”](https://man7.org/linux/man-pages/man1/sync.1.html) systemu Linux. Po zakończeniu działania polecenia wszystkie dane zostaną zapisane.
+
+![ <alt-text> ]( images/ucp/UCP_kopiowanie_plików_między_nośnikami_pamięci_94.png )
 
 ## UCP – uruchamianie zainstalowanych aplikacji z poziomu RT
 
@@ -65,13 +69,21 @@ Do działania z UMC-L nie jest wymagana żadna dodatkowa licencja. Oprogramowani
 
 Integracja panelu operatorskiego z infrastrukturą UMC-S sprowadza się do nawiązania połączenia sieciowego z serwerem UMC. Więcej informacji na temat tego typu systemów dostarczają [przykłady aplikacyjne](https://support.industry.siemens.com/cs/pl/pl/view/109963327).
 
-<!--
 ## UCP – webserver
 
-`webserver` `web` `zdalny` `remote`
+#webserver #web #zdalny #remote
 
-Brak!
+Panele operatorskie z rodziny Unified Comfort nie zapewniają funkcjonalności MiniWeb znanej z serii Comfort.
 
-![ <alt-text> ]( images/ucp/ucp5.png )
+![ <alt-text> ]( images/ucp/UCP_webserver_97.png )
 
--->
+Niektóre z funkcjonalności oferowanych w ramach webserwera paneli Comfort da się wdrożyć za pomocą mechanizmów alternatywnych. Kilka opcji wycofano ze względów bezpieczeństwa.
+
+- Dostęp zdalny do panelu sterowania i wizualizacji – [Sm@rtServer](/wincc-unified/komunikacja.html#komunikacja--dostęp-zdalny-sm)  i Web [Client](/wincc-unified/komunikacja.html#komunikacja--dost%C4%99p-zdalny-web-client).
+- Zdalne uruchomienie / zatrzymanie runtime – funkcjonalność wycofana.
+- Import / Eksport receptur – realizacja za pomocą programu.
+- Import / Eksport danych użytkowników – realizacja za pomocą programu lub przez zakładkę „User Management” [klienta webowego](/wincc-unified/komunikacja.html#komunikacja--dost%C4%99p-zdalny-web-client).
+- Diagnostyka zdalna – alarmy można przeglądać logując się jako [klient webowy](/wincc-unified/komunikacja.html#komunikacja--dost%C4%99p-zdalny-web-client). Wyświetlanie i analiza logów możliwe przy zastosowaniu narzędzia [RTILTraceViewer](/wincc-unified/diagnostyka.html#diagnostyka--rtil-traceviewer).
+- Dostęp do systemu plików panelu – ze względów bezpieczeństwa, wymiana plików z urządzeniem zewnętrznym może zachodzić tylko za pośrednictwem folderu współdzielonego. Na panelu operatorskim należy przewidzieć funkcjonalność udostępniania lub kopiowania plików do tej lokalizacji.
+
+![ <alt-text> ]( images/ucp/UCP_webserver_98.png )
