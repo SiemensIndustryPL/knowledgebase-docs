@@ -79,11 +79,11 @@ Panele operatorskie z rodziny Unified Comfort nie zapewniają funkcjonalności M
 
 Niektóre z funkcjonalności oferowanych w ramach webserwera paneli Comfort da się wdrożyć za pomocą mechanizmów alternatywnych. Kilka opcji wycofano ze względów bezpieczeństwa.
 
-- Dostęp zdalny do panelu sterowania i wizualizacji – [Sm@rtServer](/knowledgebase-docs/wincc-unified/komunikacja.html#komunikacja--dostęp-zdalny-sm)  i [Web Client](.//wincc-unified/komunikacja.html#komunikacja--dost%C4%99p-zdalny-web-client).
+- Dostęp zdalny do panelu sterowania i wizualizacji – [Sm@rtServer](/knowledgebase-docs/wincc-unified/komunikacja.html#komunikacja--dostęp-zdalny-sm)  i [Web Client](/knowledgebase-docs/wincc-unified/komunikacja.html#komunikacja--dost%C4%99p-zdalny-web-client).
 - Zdalne uruchomienie / zatrzymanie runtime – funkcjonalność wycofana.
 - Import / Eksport receptur – realizacja za pomocą programu.
-- Import / Eksport danych użytkowników – realizacja za pomocą programu lub przez zakładkę „User Management” [klienta webowego](/wincc-unified/komunikacja.html#komunikacja--dost%C4%99p-zdalny-web-client).
-- Diagnostyka zdalna – alarmy można przeglądać logując się jako [klient webowy](/wincc-unified/komunikacja.html#komunikacja--dost%C4%99p-zdalny-web-client). Wyświetlanie i analiza logów możliwe przy zastosowaniu narzędzia [RTILTraceViewer](/wincc-unified/diagnostyka.html#diagnostyka--rtil-traceviewer).
+- Import / Eksport danych użytkowników – realizacja za pomocą programu lub przez zakładkę „User Management” [klienta webowego](/knowledgebase-docs/wincc-unified/komunikacja.html#komunikacja--dost%C4%99p-zdalny-web-client).
+- Diagnostyka zdalna – alarmy można przeglądać logując się jako [klient webowy](/knowledgebase-docs/wincc-unified/komunikacja.html#komunikacja--dost%C4%99p-zdalny-web-client). Wyświetlanie i analiza logów możliwe przy zastosowaniu narzędzia [RTILTraceViewer](/knowledgebase-docs/wincc-unified/diagnostyka.html#diagnostyka--rtil-traceviewer).
 - Dostęp do systemu plików panelu – ze względów bezpieczeństwa, wymiana plików z urządzeniem zewnętrznym może zachodzić tylko za pośrednictwem folderu współdzielonego. Na panelu operatorskim należy przewidzieć funkcjonalność udostępniania lub kopiowania plików do tej lokalizacji.
 
 ![ <alt-text> ]( images/ucp/UCP_webserver_98.png )
