@@ -4,7 +4,8 @@
 
 `rest` `cw`c `control` `api`
 
-Wiele systemów informatycznych udostępnia zasoby w ramach interfejsu REST API. Standardowo system Unified nie posiada mechanizmu wysyłania zapytań HTTP i przetwarzania odpowiedzi – w JS brak m.in. funkcji „XMLHttpRequest()” i metody „fetch()”. Nie mniej, w przypadku Unified PC RT lub panelu Unified Comfort tego typu komunikacja może być realizowana z zastosowaniem CWC (własnej kontrolki). Podstawą tworzenia własnej funkcjonalności może być [projekt przykładowy](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/20?csf=1&web=1&e=t7fMt5). Poniżej znajduje się widok głównego ekranu wraz z opisem najważniejszych elementów. Krótki [film](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/20?csf=1&web=1&e=t7fMt5) demonstruje sposób działania aplikacji.
+
+Wiele systemów informatycznych udostępnia zasoby w ramach interfejsu REST API. Standardowo system Unified nie posiada mechanizmu wysyłania zapytań HTTP i przetwarzania odpowiedzi – we wbudowanym JS brak m.in. funkcji „XMLHttpRequest()” i metody „fetch()”. Nie mniej, w przypadku Unified PC RT lub panelu Unified Comfort tego typu komunikacja może być realizowana z zastosowaniem CWC (własnej kontrolki). Podstawą tworzenia własnej funkcjonalności może być [projekt przykładowy](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/20?csf=1&web=1&e=t7fMt5). Poniżej znajduje się widok głównego ekranu wraz z opisem najważniejszych elementów. Krótki [film](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/20?csf=1&web=1&e=t7fMt5) demonstruje sposób działania aplikacji.
 
 ![ <alt-text> ]( images/komunikacja/komunikacja1.png )
 
@@ -21,9 +22,11 @@ Wiele systemów informatycznych udostępnia zasoby w ramach interfejsu REST API.
 
 `sql` `odbc` `driver` `connection` `ms` `db` `baza` `log`
 
-Zarówno panele operatorskie Unified Comfort jak i Unified PC RT obsługują drivery ODBC, które służą do komunikacji z bazami danych MS SQL. Dostęp do zewnętrznej bazy danych realizowany jest w ramach skryptu JS. Połączenie nawiązywane jest za pomocą tzw. connection stringa, w który należy wypełnić parametrami klienta i serwera. Dwie rzeczy, na które należy zwrócić szczególną uwagę, to wersja drivera (jest ściśle powiązana z wersją systemu operacyjnego panelu lub programu Unified PC) oraz kwestie bezpieczeństwa połączenia (parametry „trusted_connection” i „TrustServerCertificate”). Zalecana jest analiza zagadnienia w oparciu o [dokumentację](https://docs.tia.siemens.cloud/r/en-us/v20/runtime-scripting-rt-unified/examples-rt-unified/connecting-unified-comfort-panel-with-sql-database-rt-unified) bądź wspomaganie się [przykładem aplikacyjnym](https://support.industry.siemens.com/cs/ww/en/view/109806573).
+
+Zarówno panele operatorskie Unified Comfort jak i Unified PC RT obsługują drivery ODBC, które służą do komunikacji z bazami danych MS SQL. Dostęp do zewnętrznej bazy danych realizowany jest w ramach skryptu JS. Połączenie nawiązywane jest za pomocą tzw. connection stringa, który należy wypełnić parametrami klienta i serwera. Dwie rzeczy, na które należy zwrócić szczególną uwagę, to wersja drivera (jest ściśle powiązana z wersją systemu operacyjnego panelu lub programu Unified PC) oraz kwestie bezpieczeństwa połączenia (parametry „trusted_connection” i „TrustServerCertificate”). Zalecana jest analiza zagadnienia w oparciu o [dokumentację](https://docs.tia.siemens.cloud/r/en-us/v20/runtime-scripting-rt-unified/examples-rt-unified/connecting-unified-comfort-panel-with-sql-database-rt-unified) bądź wspomaganie się [przykładem aplikacyjnym](https://support.industry.siemens.com/cs/ww/en/view/109806573).
 
 Punktem wyjścia przy tworzeniu własnej aplikacji może być [projekt przykładowy](https://docs.tia.siemens.cloud/r/en-us/v20/runtime-scripting-rt-unified/examples-rt-unified/connecting-unified-comfort-panel-with-sql-database-rt-unified) uzupełniony o [film demonstracyjny](https://docs.tia.siemens.cloud/r/en-us/v20/runtime-scripting-rt-unified/examples-rt-unified/connecting-unified-comfort-panel-with-sql-database-rt-unified). Poniżej znajduje się widok głównego ekranu wraz z opisem najważniejszych elementów.
+
 
 ![ <alt-text> ]( images/komunikacja/komunikacja2.png )
 
@@ -35,25 +38,29 @@ Punktem wyjścia przy tworzeniu własnej aplikacji może być [projekt przykład
 
 `connection` `ip` `address` `adres` `change`
 
-Funkcja systemowa „ChangeConnection()” służy do modyfikacji parametrów połączenia z PLC SIMATIC S7 bez ingerencji w projekt HMI. Najczęściej zmiana dotyczy adresu IP sterownika, co pozwala na przełączanie między partnerami komunikacyjnymi.
+Funkcja systemowa   „ChangeConnection()”     służy do modyfikacji parametrów połączenia panelu Unified ze sterownikiem SIMATIC S7-1200/1200G2/1500 bez ingerencji w projekt HMI. Najczęściej zmiana dotyczy adresu IP sterownika i jej celem jest przełączanie między partnerami komunikacyjnymi.
 
 ![ <alt-text> ]( images/komunikacja/komunikacja3.png )
 
-Połączenia zintegrowane (tworzone w edytorze "Devices & networks") korzystające z drivera "SIMATIC S7 1200/1500" są zabezpieczone certyfikatami cyfrowymi. Certyfikat takiego partnera komunikacyjnego zadeklarowanego w projekcie jest automatycznie uznawany za zaufany. Zmiana adresu IP w ustawieniach połączenia wiąże się z koniecznością ręcznego potwierdzenia certyfikatu nowego PLC bądź jego wcześniejszego importu.
+Połączenia HMI z wyżej wymienionymi PLC począwszy od wersji firmware’ów odpowiadających TIA Portal V17 są zabezpieczone certyfikatami cyfrowymi. Zakładając, że używamy panelu Unified, nie da się tych zabezpieczeń dezaktywować. Ważne jest zatem odpowiednie skonfigurowanie relacji zaufania – w tym przypadku jednostronnej, ponieważ to panel musi uznawać certyfikat PLC za zaufany.
 
-Dla platformy Unified PC RT, po wywołaniu funkcji „ChangeConnection()”, certyfikat powinien być widoczny w SIMATIC Runtime Manager:
+W sytuacji domyślnej, gdzie połączenie jest zintegrowane (PLC i HMI znajdują się w tym samym projekcie, a powiązanie tworzone jest w edytorze "Devices & networks") oraz użytkownik korzysta z automatycznie generowanych certyfikatów self-signed, relacja zaufania jest zapewniona bez dodatkowej konfiguracji.
+
+Zmiana adresu IP w ustawieniach połączenia z poziomu aplikacji HMI wiąże się z koniecznością ręcznego potwierdzenia certyfikatu nowego PLC bądź jego wcześniejszego importu.
+
+Dla platformy Unified PC RT, po wywołaniu funkcji „ChangeConnection()”, certyfikat nowego partnera powinien być widoczny w SIMATIC Runtime Manager:
 
 ![ <alt-text> ]( images/komunikacja/komunikacja4.png )
 
-Certyfikaty partnerów niekonfigurowanych w projekcie można zaimportować do SIMATIC Runtime Manager z wyprzedzeniem, a następnie uznać za zaufane jeszcze przed zmianą parametrów połączenia:
+Certyfikaty PLC niekonfigurowanych w projekcie można zaimportować do SIMATIC Runtime Manager z wyprzedzeniem, a następnie uznać za zaufane jeszcze przed zmianą parametrów połączenia:
 
 ![ <alt-text> ]( images/komunikacja/komunikacja5.png )
 
-W przypadku panelu operatorskiego Unified, import certyfikatu nie jest możliwy (format nieakceptowany przez menedżer certyfikatów. Konieczne jest ręczne potwierdzenie:
+W przypadku panelu operatorskiego Unified, import certyfikatu nie jest możliwy (format nieakceptowany przez menedżer certyfikatów). Konieczne jest ręczne potwierdzenie:
 
 ![ <alt-text> ]( images/komunikacja/komunikacja6.png )
 
-W obu przypadkach alternatywne podejście zakłada dezaktywowanie bezwarunkowego zabezpieczenia komunikacji po stronie PLC („Protection & security > Connection mechanisms > Only allow secure PG/PC and HMI communication”) i utworzenie połączenia niezintegrowanego (ręcznie, w edytorze „Connections” urządzenia HMI), do którego będzie się odwoływać funkcja „ChangeConnection()”.
+Dla obu rodzajów urządzeń alternatywne podejście zakłada dezaktywowanie bezwarunkowego zabezpieczenia komunikacji po stronie PLC (`„Protection & security > Connection mechanisms > Only allow secure PG/PC and HMI communication”`) i utworzenie połączenia niezintegrowanego (ręcznie, w edytorze `„Connections”` urządzenia HMI), do którego będzie się odwoływać funkcja `„ChangeConnection()”`.
 
 ## Komunikacja – dostępne drivery i tzw. CSP
 
@@ -67,6 +74,8 @@ Ogólne informacje można znaleźć w [dokumentacji](https://docs.tia.siemens.cl
 
 Wszystkie kanały komunikacyjne są dostępne dla standardowej instalacji WinCC Unified począwszy od wersji 17. Dla niektórych kanałów, w V16, konieczna była instalacja dodatkowych [Communication Support Packages (CSP)](https://support.industry.siemens.com/cs/ww/en/view/109779920).
 
+W TIA Portal V21 wprowadzono nowe kanały komunikacyjne: SIMATIC S7-200 i SIMATIC S7-200 Smart. Dodatkowo, rozszerzono funkcjonalność kanału Standard Modbus RTU o możliwość utrzymywania 4 równoległych połączeń z urządzeniami Modbus RTU slave.
+
 ## Komunikacja – cykl akwizycji danych
 
 `acquisition` `cycle` `cykl`
@@ -74,11 +83,12 @@ Wszystkie kanały komunikacyjne są dostępne dla standardowej instalacji WinCC 
 Odświeżanie wartości zmiennych pochodzących z PLC po stronie HMI może zachodzić:
 
 - cyklicznie (jeśli zmienna jest zastosowana na aktywnym ekranie bądź archiwizowana), gdy "Acquisition mode = Cyclic in operation", zgodnie z częstotliwością zdefiniowaną w polu "Acquisition cycle";
+
 - na żądanie, gdy "Acquisition mode = On demand".
 
 ![ <alt-text> ]( images/komunikacja/komunikacja8.png )
 
-W przypadku wybrania „Acquisition mode = On demand", należy zdefiniować unikatowe ID zmiennej w polu „Update ID”. Aktualizacja wartości zmiennej zachodzi w wyniku wywołania funkcji systemowej „UpdateTag()”, gdzie jako argument należy podać wspomniane wcześniej ID zmiennej.
+W przypadku wybrania „Acquisition mode = On demand", należy zdefiniować unikatowe ID zmiennej w polu `„Update ID”`. Aktualizacja wartości zmiennej zachodzi w wyniku wywołania funkcji systemowej `„UpdateTag()”`, gdzie jako argument należy podać wspomniane wcześniej ID zmiennej.
 
 ![ <alt-text> ]( images/komunikacja/komunikacja9.png )
 
@@ -100,11 +110,11 @@ Jeżeli nie ma możliwości wyłączenia kompresji odpowiedzi serwera, konieczne
 
 `smart` `sm@rt` `server` `vnc` `remote` `zdaln`
 
-Sm@rtServer to sposób zdalnego dostępu synchronicznego na zasadzie VNC (wspólna sesja), przez aplikację Sm@rtClient (na PC lub urządzenia mobilne Android/iOS). Brak kontrolki ekranowej (znanej ze starszych systemów), która pozwalałaby na wzajemne łączenie się między urządzeniami.
+`Sm@rtServer` to sposób zdalnego dostępu synchronicznego na zasadzie VNC (wspólna sesja), przez aplikację Sm@rtClient (na PC lub urządzenia mobilne Android/iOS). Brak kontrolki ekranowej (znanej ze starszych systemów), która pozwalałaby na wzajemne łączenie się między urządzeniami.
 
 Pozwala na korzystanie z wizualizacji oraz panelu sterowania urządzenia HMI. Zależnie od uprawnień, możliwy jest tylko podgląd lub sterowanie. Nie jest wymagana licencja. Dostępny jedynie dla paneli Unified Comfort.
 
-Sm@rtServer można aktywować bezpośrednio na urządzeniu lub skonfigurować w TIA Portal, w „Runtime settings > Remote Access > Smart Server”. Ustawienia wprowadzone na HMI, w „Network and Internet > Remote Connection” obowiązują natychmiast, bez potrzeby resetu urządzenia.
+`Sm@rtServer` można aktywować bezpośrednio na urządzeniu lub skonfigurować w TIA Portal, w „Runtime settings > Remote Access > Smart Server”. Ustawienia wprowadzone na HMI, w „Network and Internet > Remote Connection” obowiązują natychmiast, bez potrzeby resetu urządzenia.
 
 ![ <alt-text> ]( images/komunikacja/komunikacja11.png )
 
@@ -124,6 +134,10 @@ Rezultat jest następujący:
 
 ![ <alt-text> ]( images/komunikacja/komunikacja15.png )
 
+Program `Sm@rtClient` preinstalowany jest na panelach Unified Comfort z systemem operacyjnym w wersji >= 21. Oferuje odświeżony interfejs i zapewnia kilka przydatnych funkcjonalności jak zapamiętywanie adresów serwerów i skojarzonych haseł. Aplikację można uruchomić ręcznie, z panelu sterowania, ale także w ramach wizualizacji. W tym celu należy użyć funkcji systemowej `„StartProgram()”` z odpowiednim argumentem. Obowiązują ograniczenia odnośnie do urządzenia pełniącego rolę serwera – lista wspieranych typów i wersji znajduje się w poradniku dla paneli Unified Comfort.
+
+![ <alt-text> ]( images/komunikacja/Komunikacja_dostęp_zdalny_SmrtServer_49.png )
+
 <!--
 ## Komunikacja – dostęp Sm@rtServer z UXP do HMI poprzedniej generacji
 
@@ -141,21 +155,22 @@ Potrzebny panel Comfort/Basic
 
 `webclient` `web` `client` `remote` `zdalny` `operate` `monitor`
 
-Web Client to sposób zdalnego dostępu asynchronicznego do Runtime Unified przez przeglądarkę internetową (odrębna sesja). Pozwala na niezależne korzystanie z wizualizacji, z prawem podglądu (Monitor) lub sterowania (Operate), zależnie od przyznanych użytkownikowi uprawnień.
+Web Client to sposób zdalnego dostępu asynchronicznego do Runtime Unified przez przeglądarkę internetową (odrębna sesja). Pozwala na niezależne korzystanie z wizualizacji, z prawem podglądu (Monitor) lub sterowania (Operate), według przyznanych użytkownikowi uprawnień.
 
 Panele operatorskie z serii Unified Basic umożliwiają połączenie jednego klienta typu Operate, bez opcji rozszerzenia za pomocą dodatkowej licencji. Panele Unified Comfort oraz Unified PC RT dają w standardzie, bez dodatkowej licencji, możliwość dostępu dla jednego klienta typu Monitor i jednego klienta typu Operate. W przypadku UCP można rozszerzyć tę liczbę do maksymalnie 3 klientów (dowolnego typu), a dla PC RT – ograniczeniem jest w zasadzie tylko wydajność stacji, gdzie bezpiecznie przyjąć max. ok. 100 klientów (powyżej 5 sesji wymagany jest system operacyjny klasy Windows Server).
 
 Dla klienta zdalnego można utworzyć odrębne ekrany o dopasowanej rozdzielczości i proporcjach, otwierane na podstawie rozpoznania zalogowanego użytkownika lub urządzenia – w oparciu o własne mechanizmy (np. skrypty) lub opcję [My WinCC Unified](https://support.industry.siemens.com/cs/ww/en/view/109827849) (tylko dla Unified PC RT).
 
-Dostęp zdalny może być aktywowany w każdym przypadku w TIA Portal („Runtime settings > Remote Access > Web client”), a dla paneli również bezpośrednio na urządzeniu.
+Dostęp zdalny może być aktywowany w każdym przypadku w TIA Portal (`„Runtime settings > Remote Access > Web client”`), a dla paneli również bezpośrednio na urządzeniu.
 
 ![ <alt-text> ]( images/komunikacja/komunikacja16.png )
 
-Aby dostać się do wizualizacji na serwerze, wystarczy otworzyć w przeglądarce internetowej (koniecznie HTML5) dowolnego urządzenia (w tej samej sieci) witrynę o adresie „https://&lt;adres_ip_serwera&gt;”. Jeżeli zadbaliśmy o [utworzenie odpowiednich certyfikatów](https://support.industry.siemens.com/cs/ww/en/view/109777591), komunikacja będzie zabezpieczona i wyświetli się menu pozwalające na dostęp (po zalogowaniu) do ekranów procesowych (kafelka „WinCC Unified RT”), administracji użytkownikami („User Management”) lub komponentem Industrial Edge („SIMATIC Edge Management”, tylko UCP). Jeśli natomiast klient zdalny nie uznaje certyfikatu serwera za zaufany, pojawi się stosowny komunikat, gdzie należy określić, czy akceptujemy ryzyko. Pobranie i instalacja certyfikatu („Certificate Authority”) zapobiegnie ponownemu wyświetlaniu komunikatu.
+Aby dostać się do wizualizacji na serwerze, wystarczy otworzyć w przeglądarce internetowej (koniecznie HTML5) dowolnego urządzenia (w tej samej sieci) witrynę o adresie „https://<adres_ip_serwera>”. Jeżeli zadbaliśmy o [utworzenie odpowiednich certyfikatów](https://support.industry.siemens.com/cs/ww/en/view/109777591), komunikacja będzie zabezpieczona i wyświetli się menu pozwalające na dostęp (po zalogowaniu) do ekranów procesowych (kafelka „WinCC Unified RT”), administracji użytkownikami („User Management”) lub komponentem Industrial Edge („SIMATIC Edge Management”, tylko UCP). Jeśli natomiast klient zdalny nie uznaje certyfikatu serwera za zaufany, pojawi się stosowny komunikat, gdzie należy określić, czy akceptujemy ryzyko. Pobranie i instalacja certyfikatu („Certificate Authority”) zapobiegnie ponownemu wyświetlaniu komunikatu.
 
 ![ <alt-text> ]( images/komunikacja/komunikacja17.png )
 
 
+<!--
 ## Komunikacja – zmienne czasowe
 
 `time` `ltime` `czas` `date`
@@ -180,3 +195,5 @@ https://support.industry.siemens.com/forum/ww/en/posts/wincc-unified-simple-samp
 [Defining the output format - SIMATIC HMI WinCC Unified Engineering V18 - ID: 109813308 - Industry Support Siemens](https://support.industry.siemens.com/cs/mdm/109813308?c=156107769483&lc=en-WW)
 
 Limity po stronie HMI dla zmiennych extrenal time i ltime wyrażać należy w każdym przypadku za pomocą ns.
+
+-->

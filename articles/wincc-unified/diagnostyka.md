@@ -25,3 +25,7 @@ Aplikacja „RTILtraceTool.exe” służy do nawiązywania połączenia z urząd
 Istnieje również możliwość analizy w trybie offline zgromadzonych wcześniej logów („trace logging”). W przypadku wizualizacji komputerowych funkcjonalność aktywowana jest lokalnie, w oknie „RTILtraceViewer.exe”. Dla paneli operatorskich należy uruchomić opcję „Enable Trace logger” / „Enable Event logger” bezpośrednio na urządzeniu.
 
 ![ <alt-text> ]( images/diagnostyka/diagnostyka4.png )
+
+Począwszy od TIA Portal V21 Update 1, część diagnostyki można przeprowadzić nie opuszczając wizualizacji, z użyciem nowego trybu obiektu „System diagnostics control”. Po ustawieniu widoku kontrolki na „General > View type = Script diagnostics” oraz aktywacji odpowiedniego profilu diagnostyki (dla panelu w „Runtime settings”, a dla PC w SIMATIC Runtime Manager), w tabeli wyświetlane będą informacje o błędach w skryptach, ich czasie trwania i treść strumienia „Trace”.
+
+![ <alt-text> ]( images/diagnostyka/diagnostyka5.png )

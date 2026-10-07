@@ -21,9 +21,19 @@ Jeżeli nie jest wskazane korzystanie z klawiatury systemowej, można zastosowa�
 
 ![ <alt-text> ]( images/uiux/custom-keyboard1.png )
 
+Okienko pop-up z klawiaturą można dowolnie pozycjonować (np. ustawiać w pewnej relacji do modyfikowanego obiektu). Jest to przydatne dla wizualizacji w starszych odsłonach, gdzie domyślna klawiatura ekranowa może działać jedynie w trybie zadokowania na dole ekranu. Począwszy od TIA V21 Update 1, klawiatura ekranowa może działać także w trybie dynamicznego pozycjonowania, gdzie automatycznie ustawia się tak, aby zapewnić jak największą wygodę wpisywania wartości do pola. Uwaga – dostępna funkcjonalność różni się zależnie od rozmiaru ekranu urządzenia (dla 4” tylko klawiatura statyczna, dla 7” wymagane ręczne wyłączenie trybu dokowania).
+
 Aby zastosować funkcjonalność w swoim projekcie, najlepiej skopiować obiekt IOField odpowiedniego rodzaju i przepiąć tag w `Properties > General > Process value` oraz w skrypcie przypiętym pod `Events > Click left mouse button`, w linijce 3. Jeżeli tag ma mieć ustawione limity i mają być one widoczne na klawiaturze, limity powinny być skonfigurowane jako zmienne. Zmienne odpowiedzialne za ograniczenie zakresu tagu trzeba wskazać w wyżej wspomnianym skrypcie, linijki 4-5. 
 
 ![ <alt-text> ]( images/uiux/custom-keyboard2.png )
+
+Kwestia wyświetlania limitów zmiennych przy wpisywaniu wartości do obiektów IOField została zaimplementowana w TIA V21 Update 1. Po aktywacji właściwości `„Miscellaneous > Show Input Hint”` widoczna będzie podpowiedź z wartością minimalną i maksymalną.
+
+![ <alt-text> ]( images/uiux/custom-keyboard3.png )
+
+Widoczność podpowiedzi można włączyć / wyłączyć globalnie, w `„Runtime settings > General > Screen > Central input hint”`. Lokalne ustawienia przy konkretnych elementach są wtedy ignorowane.
+
+![ <alt-text> ]( images/uiux/custom-keyboard4.png )
 
 > [!TIP]
 > **Konsekwentnie nazywaj zmienne limitów** (np. `MyTag_Min`, `MyTag_Max`) i trzymaj je w jednej grupie, aby łatwo je odszukiwać w edytorze.
@@ -45,40 +55,39 @@ UI.RootWindow.InteractiveZooming = false;
 > [!NOTE]
 > Zoom nadal pozostaje aktywny dla innych obiektów typu `Screen window`.
 
-## Różne czcionki dla różnych języków
+## Czcionki dla różnych języków
 `text` `font` `język` `language`
 
 Konfiguracja różnych czcionek dla języków jest możliwa po **odznaczeniu** opcji `Use same font for all languages` w `Options > Settings > Visualization`. Język edycji projektu zmienia się w zakładce `Tasks` po prawej stronie.
 
 ![ <alt-text> ]( images/uiux/fonts1.png )
 
-Niezależnie od ustawienia, domyślny font dla każdego języka to **Siemens Sans** (bez możliwości zmiany; `Fallback font` w `Runtime settings > Language & font`).
+Począwszy od TIA V20 Update 2 każdemu językowi można nadać domyślny (zastępczy) font („Fallback font” w `„Runtime settings > Language & font”`) – konieczna jest aktywacja opcji „Enable language-compatible font families”. W poprzednich wersjach domyślna czcionka dla każdego z języków to Siemens Sans, bez możliwości modyfikacji.
+
+![ <alt-text> ]( images/uiux/fonts2.png )
 
 ## Style i palety kolorów
 `style` `kolor` `color` `palette` `paleta` `corporate`
 
-Własny styl wizualizacji dostępny jest od wersji **V19**. Do tworzenia stylów służy darmowy [WinCC Unified Corporate Designer]( https://support.industry.siemens.com/cs/ww/en/view/109824234 ). Plik stylu umieść w projekcie i wybierz w `Runtime settings > General > Screen`.
+Możliwość definicji własnego stylu wizualizacji pojawiła się w WinCC Unified wraz z wersją 19. Do tworzenia stylów służy darmowy program WinCC Unified Corporate Designer. Plik stylu należy umieścić w odpowiedniej lokalizacji w projekcie, a następnie wybrać go w `„Runtime settings > General > Screen”`.
 
 ![ <alt-text> ]( images/uiux/styles1.png )
 
-Styl wizualizacji można przełączać w trakcie działania aplikacji – przykładowo, wystarczy podpiąć pod przycisk w `Event > Click left mouse button` jedną z linijek skryptu jak poniżej. W ten sposób można skonfigurować np. tryb nocny/ciemny wizualizacji.
-
-```javascript
-HMIRuntime.UI.Style = "SiemensStyleLibrary_1_0";
-
-// Style systemowe:
-// HMIRuntime.UI.Style = "ExtendedStyle";
-// HMIRuntime.UI.Style = "FlatStyle_Dark";
-// HMIRuntime.UI.Style = "FlatStyle_Bright";
-```
-
-Style pozwalają na utworzenie kilku wariantów obiektu. Przykładowo, można utworzyć różne rodzaje przycisków.
+Styl wizualizacji można przełączać w trakcie działania aplikacji – przykładowo, wystarczy podpiąć pod przycisk w `„Event > Click left mouse button”` jedną z linijek skryptu jak poniżej. W ten sposób można skonfigurować np. tryb `nocny/ciemny` wizualizacji.
 
 ![ <alt-text> ]( images/uiux/styles2.png )
 
-Własne palety kolorów to funkcjonalność wprowadzona w **V20**. Konfiguracja zachodzi w bibliotece TIA Portal. Póki co (V20, 02.2025) **nie jest możliwe przełączanie palety w trakcie działania aplikacji**. Jest to właściwość jedynie do odczytu.
+Style pozwalają na utworzenie kilku wariantów obiektu. Przykładowo, można utworzyć różne rodzaje przycisków.
 
 ![ <alt-text> ]( images/uiux/styles3.png )
+
+Własne palety kolorów to funkcjonalność wprowadzona w V20. Konfiguracja zachodzi w bibliotece TIA Portal. Póki co (V21.0.2.0) nie jest możliwe przełączanie palety w trakcie działania aplikacji. Jest to właściwość jedynie do odczytu.
+
+![ <alt-text> ]( images/uiux/styles4.png )
+
+Razem z premierą WinCC Unified Corporate Designer V21 udostępniono nowy styl bazowy – `„Compatibility Style”`, który ma za zadanie pomóc wiernie odwzorować wygląd wizualizacji do jakiego przywykli użytkownicy paneli starszej generacji.
+
+![ <alt-text> ]( images/uiux/styles5.png )
 
 ## Kontrolka 3D
 `cwc` `3d` `custom` `control` `kontrolki`
@@ -116,7 +125,7 @@ Wyświetlanie plików .pdf zapisanych lokalnie na urządzeniu umożliwia standar
 ## Wyświetlanie grafik z dysku
 `browser` `png` `jpg` `graphic` `grafika` `photo` `file`
 
-Grafikę zapisz w formacie **PDF** i postępuj jak w sekcji [Wyświetlanie plików PDF]( #wyświetlanie-plików-pdf ).
+Grafikę zapisz w formacie **PDF** i postępuj jak w sekcji [Wyświetlanie plików PDF]( #wyświetlanie-plików-pdf ). Drugim sposobem jest osadzenie obrazu w statycznym dokumencie .html zapisanym na dysku panelu i wyświetlenie go w kontrolce przeglądarki
 
 ## Uruchamianie panelu z językiem, który był wybrany jako ostatni
 `text` `font` `język` `language`
@@ -153,6 +162,8 @@ HMIRuntime.FileSystem.ReadFile(path, "utf8").then((content) => {
 HMIRuntime.Timers.SetTimeout(() => {HMIRuntime.Language = parseInt(content);}, 50);
 });
 ```
+
+
 
 ## Wywołanie własnej funkcji na przycisk kontrolki
 `command` `fire` `control` `button`
