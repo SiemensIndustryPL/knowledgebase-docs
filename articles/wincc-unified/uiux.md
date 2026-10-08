@@ -75,7 +75,20 @@ Możliwość definicji własnego stylu wizualizacji pojawiła się w WinCC Unifi
 
 Styl wizualizacji można przełączać w trakcie działania aplikacji – przykładowo, wystarczy podpiąć pod przycisk w `„Event > Click left mouse button”` jedną z linijek skryptu jak poniżej. W ten sposób można skonfigurować np. tryb `nocny/ciemny` wizualizacji.
 
-![ <alt-text> ]( images/uiux/styles2.png )
+```javascript
+
+
+HMIRuntime.UI.Style = "SiemensStyleLibrary_1_0";
+
+//Style Systemowe
+//HMIRuntime.UI.Style = "ExtendedStyle";
+//HMIRuntime.UI.Style = "FlatStyle_Dark";
+//HMIRuntime.UI.Style = "FlatStyle_Bright";
+
+```
+
+
+
 
 Style pozwalają na utworzenie kilku wariantów obiektu. Przykładowo, można utworzyć różne rodzaje przycisków.
 
@@ -89,10 +102,7 @@ Razem z premierą WinCC Unified Corporate Designer V21 udostępniono nowy styl b
 
 ![ <alt-text> ]( images/uiux/styles5.png )
 
-## Kontrolka 3D
-`cwc` `3d` `custom` `control` `kontrolki`
 
-Jak dotąd w WinCC Unified brak kontrolki systemowej pozwalającej wyświetlać i wchodzić w interakcję z trójwymiarowymi modelami obiektów (stan dla V21). Nie mniej, funkcjonalność można wprowadzić do wizualizacji poprzez stworzenie własnej kontrolki **(Custom Web Control)** lub skorzystanie z gotowych rozwiązań znalezionych w Internecie ([przykład 1](https://hmix.tech/products/digital-twin-&-3d-viewer-wincc-unified), [przykład 2](https://svghmi.pro/shop/wincc-unified-3d-control?srsltid=AfmBOoqppNeDF0-URHj0piYOJU63CtSyNTImeYZGDpfVHCQCvVf8SMja)).
 
 
 ## Własne (dynamiczne) grafiki SVG
@@ -106,16 +116,7 @@ Korzystając z odpowiedniego programu (np. [Inkscape]( https://inkscape.org/rele
 
 `Programowanie` dynamicznych grafik **SVG** to zagadnienie zaawansowane wymagające biegłości w języku XML. Dla zainteresowanych dostępna jest nieoficjalna (i niekoniecznie zawsze poprawna) [dokumentacja](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/08?csf=1&web=1&e=yUL1FO). Poza tym na YouTube jest kilka rzeczowych filmików, a nawet ktoś zrobił [konwerter](https://svghmi.pro/?srsltid=AfmBOorTTk1SpwjD-pOSWtnN4i3m_rgAQQZQP5y-ziQth42bMPdbjMGG) i najwyraźniej na tym zarabia.
 
-## Kontrolka PLC Trace
-`cwc` `custom` `control` `kontrolki` `trace`
 
-Podgląd wykresów **Trace** generowanych przez PLC można zrealizować dzięki **własnej kontrolce**. Przykład zaprezentowano na webinarze **APC Expert Live Meeting: Injection Molding Application**. Kontrolka nie jest publiczna – po projekt **IMM Example Application** można zgłosić wysyłając wiadomość na: [plastics.imm.automation.industry@siemens.com]( mailto:plastics.imm.automation.industry@siemens.com ).
-
-
-Funkcjonalność podglądu wykresów **Trace** generowanych przez PLC można wdrożyć w WinCC Unified dzięki **własnej kontrolce**. Przykład został zaprezentowany na webinarze `APC Expert Live Meeting: Injection Molding Application`. Kontrolka nie jest dostępna publicznie, ale w razie potrzeby można się zgłosić po projekt `IMM Example Application` na adres plastics.imm.automation.industry@siemens.com 
-
-
-![ <alt-text> ]( images/uiux/plctrace1.png )
 
 ## Wyświetlanie plików PDF
 `browser` `pdf` `file`

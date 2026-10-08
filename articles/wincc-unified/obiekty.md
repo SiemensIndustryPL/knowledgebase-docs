@@ -1,4 +1,18 @@
 # Obiekty
+
+## Kontrolka 3D
+`cwc` `3d` `custom` `control` `kontrolki`
+
+Jak dotąd w WinCC Unified brak kontrolki systemowej pozwalającej wyświetlać i wchodzić w interakcję z trójwymiarowymi modelami obiektów (stan dla V21). Nie mniej, funkcjonalność można wprowadzić do wizualizacji poprzez stworzenie własnej kontrolki **(Custom Web Control)** lub skorzystanie z gotowych rozwiązań znalezionych w Internecie ([przykład 1](https://hmix.tech/products/digital-twin-&-3d-viewer-wincc-unified), [przykład 2](https://svghmi.pro/shop/wincc-unified-3d-control?srsltid=AfmBOoqppNeDF0-URHj0piYOJU63CtSyNTImeYZGDpfVHCQCvVf8SMja)).
+
+## Kontrolka PLC Trace
+`cwc` `custom` `control` `kontrolki` `trace`
+
+Funkcjonalność podglądu wykresów Trace generowanych przez PLC można wdrożyć w WinCC Unified dzięki własnej kontrolce. Obiekt realizujący tego typu funkcjonalność jest używany w ramach przykładowego projektu automatyzacji wtryskarek – [IMM 1500](https://support.industry.siemens.com/cs/pl/en/view/110000476). 
+
+
+![ <alt-text> ]( images/obiekty/plctrace1.png )
+
 ## Obiekty – wyświetlanie zmiennej typu Int z przecinkiem
 
 `io` `ioflied` `int` `float` `display`
@@ -7,11 +21,13 @@ Dość częstym wymaganiem jest, aby zmienne całkowitoliczbowe (np. Int), na kt
 
 Do wersji 20 Update 1 podstawową metodą realizacji takiej funkcjonalności było dodanie do każdego obiektu IOField dwóch skryptów modyfikujących wartość wymienianą z PLC. Począwszy od V20 Update 3, dla pól można skonfigurować to zachowanie poprzez właściwość „Shift decimal places”. Szczegóły we wpisie na [stronie internetowej wsparcia technicznego](https://support.industry.siemens.com/cs/ww/en/view/109816808).
 
+<!--
 ## Obiekty – dostęp do list tekstowych ze skryptu
 
 #script #skrypt #js #lista #entry
 
 https://support.industry.siemens.com/cs/ww/en/view/109811083
+-->
 
 ## Obiekty – aktywne pozycje w listach
 
@@ -36,6 +52,8 @@ for (let i = 0; i <= liczba_elementow_listy; i++)
 Dla list składających się z co najmniej siedmiu elementów, liczba widocznych pozycji w obiekcie Symbolic IOField jest stała i równa 7. Jak dotąd (V20.0.0.3) nie ma możliwości modyfikacji tej właściwości. Po rozwinięciu, lista ustawia się na pierwszych siedmiu pozycjach.
 
 ![ <alt-text> ]( images/obiekty/obiekty2.png )
+
+<!--
 
 ## Obiekty – funkcjonalność SetWhilePressed
 
@@ -101,6 +119,8 @@ The new functions are slower due to the updating of the tag at the beginning and
 
 https://find.siemens.cloud/v/preview?profile=DI.Assist.Preview&uilanguage=en&cf.pc.region=PL&cf.pc.acceptedlangs=pl%2500en%2500ru%2500de%2500any%20other&cf.ce.docid=%2FTS.I.EntitiesYes%2FDI.CS.TSKB.EN%2F%7Cfcc9cf93-ec02-4c06-b13e-67a8de0575b6&text=unified%20set%20bit%20while%20pressed&cf.ce.assist-srq=1-7034002339
 
+-->
+
 ## Obiekty – obracanie grupy elementów
 
 `group` `rotation` `grupa` `obrót` `pivot`
@@ -114,6 +134,7 @@ Alternatywnym podejściem, bez wprowadzania dodatkowego obiektu w postaci grupy,
 
 ![ <alt-text> ]( images/obiekty/obiekty5.png )
 
+<!--
 ## Obiekty – bitwise dynamization
 
 `expressions` `bitwise` `and` `and8` `bit`
@@ -152,3 +173,5 @@ W związku z tym, jako wartość _Value1_ proszę przyjąć zmienną, dla które
 
 Po znaku równości wpisuje się wartość 2<sup>n</sup>, gdzie n to numer bitu, którego zmianę wykrywamy:
 ![ <alt-text> ]( images/obiekty/obiekty7.png )
+
+-->

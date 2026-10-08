@@ -45,6 +45,8 @@ Skrypty realizujące powyższe założenia zakotwiczono pod właściwościami z 
 
 Sposób działania funkcjonalności przedstawiono na [filmie demonstracyjnym.](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/61?csf=1&web=1&e=8jlhOb) Jeżeli wizualizacja nie ma stałego fragmentu (stworzona jest z ekranów podmienianych „w całości”), konieczne będzie skonfigurowanie stosownych skryptów na każdym ekranie z osobna.
 
+
+<!--
 ## Ekrany – zmiana rozmiaru faceplate
 
 `fpt` `faceplate` `popup` `pop-up` `size` `rozmiar` `js` `script` `skrypt`
@@ -84,6 +86,11 @@ ui.PopupScreenWindows[0].Width = 400;
 
 U mnie to zadziałało. Możliwe, że w docelowej wizualizacji trzeba będzie namierzyć indeks w nawiasie kwadratowym, a nie podać go z ręki.
 
+-->
+
+
+
+<!--
 ## Ekrany – automatyczne skalowanie faceplate w oknie pop-up
 
 `faceplate` `pft` `pop-up` `popup` `js` `script` `skrypt` `resize` `scale`
@@ -98,6 +105,9 @@ Efekt
 
 1 to faceplate w oryginalnym rozmiarze. 2 to faceplate, który chcieliśmy wyświetlić w rozmiarze 300x300. Widać, że pojawiła się pusta przestrzeń. Rozmiar okna podajemy **razem z nagłówkiem_._** W związku z tym, gdy dla okna 2 podałem rozmiar 300x300, „część użyteczna” nie jest kwadratowa.Gdy w 3 zmniejszyłem odrobinę szerokość, „część użyteczna” jest kwadratowa i ma rozmiar 270x270.Trzeba by jeszcze to sprawdzić na HMI. Na symulacji nagłówek ma stale 30 px, niezależnie od rozdzielczości panelu.
 
+-->
+
+<!--
 ## Ekrany – faceplate in faceplate, zmiana interfejsu
 
 `faceplate` `fpt` `interface` `pop-up` `popup` `js` `script` `skrypt`
@@ -109,6 +119,7 @@ Standardowo w funkcjonalności „faceplate in faceplate”, faceplate potomny o
 Jeśli mielibyśmy wskazać inny interfejs – wątpię czy to się uda, bo z wewnątrz faceplate’a nie ma dostępu do tagów globalnych. Sprawdzę.
 
 Próbowałem na różne sposoby, ale jest to skutecznie zablokowane. Sama funkcja OpenFaceplateInPopup wywoływana wewnątrz faceplate’a nie przyjmuje argumentu „interface”.
+-->
 
 ## Ekrany – okno pop-up otwierane za pomocą zmiennej
 
@@ -147,6 +158,9 @@ Skrypt realizujący tę funkcjonalność zakotwiczono pod właściwością „Al
 
 Sposób działania funkcjonalności przedstawiono na [filmie demonstracyjnym.](https://siemens.sharepoint.com/:f:/r/teams/RC-PLDIFAAPC/Shared%20Documents/Projekty/PROJEKTY/FY25/Unified%20FAQ/65?csf=1&web=1&e=dF3sfz) Jeżeli wizualizacja nie ma stałego fragmentu (stworzona jest z ekranów podmienianych „w całości”), konieczne będzie skonfigurowanie stosownych skryptów na każdym ekranie z osobna.
 
+
+
+<!--
 ## Ekrany – zmiana właściwości obiektu wewnątrz pop-up w trakcie otwierania
 
 `pop-up` `popup` `js` `script` `skrypt`
@@ -171,3 +185,5 @@ let timer = HMIRuntime.Timers.SetTimeout(function() {
 HMIRuntime.UI.SysFct.SetPropertyValue(„/Alarm/Text box_1”, „Text”, traceText);
 }, 100);
 ```
+
+-->

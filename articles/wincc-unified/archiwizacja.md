@@ -88,6 +88,8 @@ Na zakres czasowy archiwizacji, a zatem i częstotliwość usuwania segmentów, 
 
 Więcej informacji na temat systemu archiwizacji można znaleźć w [dokumentacji WinCC Unified](https://docs.tia.siemens.cloud/r/en-us/v20/logging-data-rt-unified/how-it-works-rt-unified).
 
+
+<!--
 ## Archiwizacja – struktura bazy SQLite
 
 `sqlite` `log` `pk` `id` `#db3`
@@ -95,3 +97,5 @@ Więcej informacji na temat systemu archiwizacji można znaleźć w [dokumentacj
 informacje na temat nazwy taga przypisanej do danego ID znajdują się w konfiguracyjnej bazie danych. Poniżej oryginalna instrukcja:
 
 The tag logging (the alarm logging as well) consists of two databases. One is the main database, for which you specify the location in the Runtime Settings -> Storage System, and the other one is the tag logging database itself. The main database contain all necessary configuration information that is needed to do the logging properly. The logging database then contains the logged values of the tags. The link between the tag name and the ID can be found in the main database. If you open the main database via the "DB Browser for SQLite" you find a table "LoggingTag" in there. When you open this table you have all Logging Tags listed with also their ID stated. The first Column (pk_Key) is the ID which is used in the logging database and the 7th Column (Name) specifies the tag name for that ID. So by checking the main DB you can find the link between tag and ID of the log-DB file.
+
+-->
